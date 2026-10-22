@@ -9,15 +9,15 @@ const config: Config = {
     extend: {
       colors: {
         ink: {
-          DEFAULT: "#08090C",
-          2: "#121419",
-          3: "#1A1D23",
+          DEFAULT: "#050506",
+          2: "#0D0D10",
+          3: "#151519",
         },
         accent: {
-          DEFAULT: "#F5B700",
-          deep: "#A87A00",
-          dim: "rgba(245, 183, 0, 0.15)",
-          glow: "rgba(245, 183, 0, 0.4)",
+          DEFAULT: "#ECEBF4",
+          deep: "#ECEBF4",
+          dim: "rgba(214, 212, 232, 0.15)",
+          glow: "rgba(214, 212, 232, 0.4)",
         },
         silver: {
           DEFAULT: "#C9CED6",
@@ -30,11 +30,12 @@ const config: Config = {
           hover: "rgba(255, 255, 255, 0.08)",
           border: "rgba(255, 255, 255, 0.08)",
         },
-        paper: "#EEF0F2",
+        paper: "#050506",
       },
       fontFamily: {
-        display: ['"Space Grotesk"', "system-ui", "sans-serif"],
-        body: ['"Inter"', "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "system-ui", "sans-serif"],
+        body: ["var(--font-body)", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
       borderRadius: {
         "2xl": "18px",
@@ -55,7 +56,7 @@ const config: Config = {
       },
       keyframes: {
         "pulse-dot": {
-          "50%": { boxShadow: "0 0 0 10px rgba(245, 183, 0, 0)" },
+          "50%": { boxShadow: "0 0 0 10px rgba(214, 212, 232, 0)" },
         },
         float: {
           "0%, 100%": { transform: "translateY(0)" },

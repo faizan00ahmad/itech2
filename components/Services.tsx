@@ -1,10 +1,11 @@
 import Image from "next/image";
+import SectionHead from "./SectionHead";
 
 const svgProps = {
   viewBox: "0 0 48 48",
   fill: "none",
   stroke: "currentColor",
-  strokeWidth: 2,
+  strokeWidth: 2.4,
   strokeLinecap: "round" as const,
   strokeLinejoin: "round" as const,
   className: "w-7 h-7",
@@ -15,7 +16,7 @@ const unsplash = (id: string) =>
 
 const services = [
   {
-    title: "Web Design & Development",
+    title: "Web design & development",
     desc: "High-performing web ecosystems built with modern frameworks. Responsive, fast, and SEO-optimised websites that convert visitors into customers.",
     tags: ["React", "Next.js", "WordPress", "UI/UX"],
     img: unsplash("1498050108023-c5249f4df085"),
@@ -27,7 +28,7 @@ const services = [
     ),
   },
   {
-    title: "Digital Marketing",
+    title: "Digital marketing",
     desc: "Data-driven strategies to amplify your brand. SEO, social media, PPC, content marketing, and analytics that deliver measurable ROI.",
     tags: ["SEO", "PPC", "Social Media", "Analytics"],
     img: unsplash("1460925895917-afdab827c52f"),
@@ -39,7 +40,7 @@ const services = [
     ),
   },
   {
-    title: "Software Development",
+    title: "Software development",
     desc: "Custom software from enterprise platforms to SaaS products. Agile delivery with scalable architecture and clean, maintainable code.",
     tags: ["Python", "Node.js", ".NET", "APIs"],
     img: unsplash("1461749280684-dccba630e2f6"),
@@ -51,7 +52,7 @@ const services = [
     ),
   },
   {
-    title: "Personal Assistance",
+    title: "Personal assistance",
     desc: "Dedicated virtual assistants and tech support specialists. Calendar management, email handling, research, and admin automation.",
     tags: ["VA", "Admin", "Scheduling", "Support"],
     img: unsplash("1758598306663-4874b2aff114"),
@@ -63,7 +64,7 @@ const services = [
     ),
   },
   {
-    title: "Cloud Services",
+    title: "Cloud services",
     desc: "Seamless migration to Office 365, AWS, and Azure with security compliance, backup strategies, and ongoing cost optimisation.",
     tags: ["AWS", "Azure", "Office 365", "Security"],
     img: unsplash("1667984390538-3dea7a3fe33d"),
@@ -75,7 +76,7 @@ const services = [
     ),
   },
   {
-    title: "IT Management",
+    title: "IT management",
     desc: "Proactive hardware provisioning, network optimisation, and systems maintenance that keep your business running without interruption.",
     tags: ["Networking", "Hardware", "Maintenance", "Helpdesk"],
     img: unsplash("1558494949-ef010cbdcc31"),
@@ -87,7 +88,7 @@ const services = [
     ),
   },
   {
-    title: "App Development",
+    title: "App development",
     desc: "Native and cross-platform mobile applications for iOS and Android, designed for performance and a polished user experience.",
     tags: ["iOS", "Android", "Flutter", "React Native"],
     img: unsplash("1512941937669-90a1b58e7e9c"),
@@ -102,31 +103,22 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" data-sea className="relative section-pad bg-ink overflow-clip">
-      <div data-float className="absolute -left-[20vw] top-[10%] w-[50vw] h-[50vw] rounded-full bg-[radial-gradient(circle,rgba(245,183,0,0.18),transparent_65%)] blur-[100px] opacity-40" />
-      <div data-float className="absolute right-[-15vw] bottom-[15%] w-[35vw] h-[35vw] rounded-full bg-[radial-gradient(circle,rgba(201,206,214,0.14),transparent_65%)] blur-[80px] opacity-40" />
-
+    <section id="services" data-sea className="relative section-pad section-veil overflow-clip">
       <div className="container-site relative z-10">
-        <header className="max-w-[860px] mb-[clamp(60px,8vw,100px)]">
-          <p className="flex items-center gap-3 mb-6 font-display font-semibold text-[13px] tracking-[0.28em] uppercase text-accent">
-            <span className="eyebrow-dot" />
-            What We Do
-          </p>
-          <h2 data-reveal className="font-display font-black text-[clamp(40px,6.8vw,96px)] leading-[0.92] tracking-[-0.03em] uppercase text-white">
-            The Best IT Solutions
-          </h2>
-          <p data-reveal className="mt-7 max-w-[58ch] text-[clamp(16px,1.2vw,18px)] leading-relaxed text-white/60">
-            We pride ourselves on delivering unparalleled IT solutions tailored to meet the unique needs of your business.
-          </p>
-        </header>
+        <SectionHead
+          index="II"
+          label="Services"
+          title="The best IT solutions."
+          intro="Seven disciplines under one roof, each tailored to the unique needs of your business."
+        />
 
-        <div data-stagger className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <div data-stagger className="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
           {services.map((s, i) => (
             <article
               key={s.title}
-              className={`glow-card glass group flex flex-col rounded-3xl overflow-hidden hover:-translate-y-2.5 transition-all duration-500 hover:border-accent/30 ${
+              className={`card glow-card group flex flex-col overflow-hidden ${
                 i === services.length - 1
-                  ? "md:col-span-2 md:justify-self-center md:w-[calc(50%-12px)] xl:col-span-1 xl:col-start-2 xl:w-full"
+                  ? "md:col-span-2 md:justify-self-center md:w-[calc(50%-8px)] xl:col-span-1 xl:col-start-2 xl:w-full"
                   : ""
               }`}
             >
@@ -136,25 +128,25 @@ export default function Services() {
                   alt={s.alt}
                   fill
                   sizes="(min-width: 1280px) 400px, (min-width: 768px) 50vw, 100vw"
-                  className="object-cover grayscale-[35%] group-hover:grayscale-0 group-hover:scale-[1.07] transition-all duration-700 ease-out"
+                  className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-[1.07] transition-all duration-700 ease-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
-                <span className="absolute right-5 top-4 font-display font-black text-[44px] leading-none text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.55)]">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0E] via-[#0B0B0E]/30 to-transparent" />
+                <span className="absolute left-5 top-5 label-pill !h-7 !px-3 text-white/80">
                   {String(i + 1).padStart(2, "0")}
                 </span>
               </div>
 
-              <div className="relative flex flex-col flex-1 px-[clamp(24px,3vw,34px)] pb-[clamp(26px,3vw,36px)]">
-                <div className="-mt-9 mb-6 w-[64px] h-[64px] rounded-2xl bg-ink-2 border border-accent/40 flex items-center justify-center text-accent shadow-[0_14px_30px_-10px_rgba(0,0,0,0.8)] group-hover:bg-accent group-hover:text-ink transition-colors duration-500">
+              <div className="relative flex flex-col flex-1 px-[clamp(24px,2.6vw,32px)] pb-[clamp(26px,2.8vw,34px)]">
+                <div className="-mt-8 mb-6 w-14 h-14 rounded-full bg-[#0B0B0E] border border-white/15 flex items-center justify-center text-white group-hover:bg-white group-hover:text-ink group-hover:border-white transition-colors duration-500 [&_svg]:w-6 [&_svg]:h-6">
                   {s.icon}
                 </div>
-                <h3 className="font-display font-black text-[clamp(20px,1.8vw,24px)] uppercase tracking-tight text-white mb-3.5 leading-tight">
+                <h3 className="font-display font-semibold text-[clamp(20px,1.6vw,23px)] tracking-[-0.015em] text-white mb-3 leading-tight">
                   {s.title}
                 </h3>
-                <p className="text-[15px] leading-relaxed text-white/60 mb-6">{s.desc}</p>
+                <p className="text-[15px] leading-relaxed text-white/55 mb-7">{s.desc}</p>
                 <ul className="mt-auto flex flex-wrap gap-2">
                   {s.tags.map((t) => (
-                    <li key={t} className="tag-pill font-display">
+                    <li key={t} className="tag-pill">
                       {t}
                     </li>
                   ))}

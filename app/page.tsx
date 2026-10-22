@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import SmoothScroll from "@/components/SmoothScroll";
-import SceneComet from "@/components/SceneComet";
+import LiquidBackground from "@/components/LiquidBackground";
+import CursorRing from "@/components/CursorRing";
 import ScrollAnimations from "@/components/ScrollAnimations";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
@@ -22,12 +23,14 @@ export default function Home() {
   return (
     <>
       <SmoothScroll />
-      <SceneComet />
+      <LiquidBackground />
+      <div className="grain" aria-hidden="true" />
+      <CursorRing />
       <ScrollAnimations />
 
       <Header onOpenContact={() => setDialogOpen(true)} />
 
-      <main>
+      <main className="relative z-10">
         <Hero />
         <Marquee />
         <About />

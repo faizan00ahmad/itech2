@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter } from "next/font/google";
+import { DM_Sans, DM_Mono, Inter } from "next/font/google";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
+const dmSans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-display",
-  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
+
+const dmMono = DM_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  weight: ["300", "400", "500"],
   display: "swap",
 });
 
@@ -55,7 +61,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${spaceGrotesk.variable} ${inter.variable} font-body bg-ink text-white/70 antialiased overflow-x-hidden`}
+        className={`${dmSans.variable} ${dmMono.variable} ${inter.variable} font-body bg-ink text-white/70 antialiased overflow-x-hidden`}
       >
         {children}
       </body>

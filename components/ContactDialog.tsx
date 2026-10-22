@@ -94,8 +94,8 @@ export default function ContactDialog({ open, onClose }: { open: boolean; onClos
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
           </button>
 
-          <h2 className="font-display font-black text-[clamp(22px,3vw,30px)] uppercase tracking-tight text-white mb-2">
-            Get a Quote
+          <h2 className="font-mono font-light text-[clamp(26px,3vw,34px)] tracking-[-0.04em] text-white mb-2">
+            Get a quote.
           </h2>
           <p className="text-sm text-white/60 mb-6">
             Fill in the details and we&apos;ll get back to you within 24 hours.
